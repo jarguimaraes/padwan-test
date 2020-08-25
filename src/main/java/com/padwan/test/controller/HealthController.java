@@ -20,6 +20,7 @@ public class HealthController {
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity health() {
         JSONObject json = new JSONObject();
+        json.put("Sakura Haruno", "Sasuke-Kun!");
         json.put("kenobi", "Hello there!");
         json.put("grievous", "general Kenobi!");
         return new ResponseEntity(json.toString(), HttpStatus.OK);
