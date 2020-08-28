@@ -1,16 +1,12 @@
 package com.padwan.test.controller;
 
-import com.padwan.test.dto.GenericoDTO;
 import com.padwan.test.service.VaderService;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 
 @RestController
@@ -30,9 +26,9 @@ public class VaderController {
         try {
             JSONObject json = new JSONObject();
             json.put("Darth Vader", vaderService.skills());
-            return new ResponseEntity(json.toString(), HttpStatus.OK);
+            return new ResponseEntity<Object>(json.toString(), HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class GenericoService {
 
-
     public ProcessDTO process(GenericoDTO generico){
         ProcessDTO processDTO = new ProcessDTO();
         processDTO.setClasseAbreviado(generico.getClasse().split(" ")[0]);

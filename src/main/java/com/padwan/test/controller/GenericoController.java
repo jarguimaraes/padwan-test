@@ -2,7 +2,6 @@ package com.padwan.test.controller;
 
 import com.padwan.test.dto.GenericoDTO;
 import com.padwan.test.service.GenericoService;
-import com.padwan.test.service.VaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,11 +21,11 @@ public class GenericoController {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity process(@RequestBody GenericoDTO json) {
+    public ResponseEntity<Object> process(@RequestBody GenericoDTO json) {
         try {
-            return new ResponseEntity(genericoService.process(json), HttpStatus.OK);
+            return new ResponseEntity<Object>(genericoService.process(json), HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity("erro ao processar o generico", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<Object>("erro ao processar o generico", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
