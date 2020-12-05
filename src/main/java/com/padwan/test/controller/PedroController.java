@@ -1,7 +1,7 @@
 package com.padwan.test.controller;
 
 import com.padwan.test.dto.GenericoDTO;
-import com.padwan.test.service.VaderService;
+import com.padwan.test.service.PedroService;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +14,14 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/vader")
-public class VaderController {
+@RequestMapping("/pedro")
+public class PedroController {
 
-    private VaderService vaderService;
+    private PedroService pedroService;
 
     @Autowired
-    public VaderController(VaderService vaderService){
-        this.vaderService = vaderService;
+    public PedroController(PedroService pedroService){
+        this.pedroService = pedroService;
     }
 
     @ResponseBody
@@ -29,7 +29,7 @@ public class VaderController {
     public ResponseEntity<Object> skills() {
         try {
             JSONObject json = new JSONObject();
-            json.put("Darth Vader", (Object)vaderService.skills());
+            json.put("Pedro", (Object)pedroService.skills());
             
             return new ResponseEntity(json.toString(), HttpStatus.OK);
         } catch (Exception e) {
