@@ -18,7 +18,7 @@
 		<java.version>11</java.version>
 		<spring.datasource.url>jdbc:postgresql://localhost:5432/padawan</spring.datasource.url>
 		<spring.datasource.username>postgres</spring.datasource.username>
-		<spring.datasource.password>sua_senha_aqui</spring.datasource.password>
+		<spring.datasource.password>admin</spring.datasource.password>
 	</properties>
 
 	<dependencies>

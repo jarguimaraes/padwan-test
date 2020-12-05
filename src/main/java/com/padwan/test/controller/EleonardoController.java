@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.padwan.test.service.VaderService;
+import com.padwan.test.service.EleonardoService;
 
 @RestController
-@RequestMapping("/vader")
-public class VaderController {
+@RequestMapping("/eleonardo")
+public class EleonardoController {
 
-  private VaderService vaderService;
+  private EleonardoService eleonardoService;
 
   @Autowired
-  public VaderController(VaderService vaderService) {
-    this.vaderService = vaderService;
+  public EleonardoController(EleonardoService eleonardoService) {
+    this.eleonardoService = eleonardoService;
   }
 
   @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -29,7 +29,7 @@ public class VaderController {
   public ResponseEntity<Object> skills() {
     try {
       JSONObject json = new JSONObject();
-      json.put("Darth Vader", vaderService.skills());
+      json.put("Darth Eleonardo :p", eleonardoService.skills());
       return new ResponseEntity(json.toString(), HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
