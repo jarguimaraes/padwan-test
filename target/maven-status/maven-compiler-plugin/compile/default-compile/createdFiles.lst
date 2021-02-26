@@ -1,0 +1,13 @@
+com\padwan\test\controller\JediController.class
+com\padwan\test\entity\Jedi.class
+com\padwan\test\controller\HealthController.class
+com\padwan\test\controller\VaderController.class
+com\padwan\test\dto\GenericoDTO.class
+com\padwan\test\service\GenericoService.class
+com\padwan\test\PadwanTestApplication.class
+com\padwan\test\service\JediService.class
+com\padwan\test\service\VaderService.class
+com\padwan\test\repository\JediRepository.class
+com\padwan\test\dto\JediDTO.class
+com\padwan\test\dto\ProcessDTO.class
+com\padwan\test\controller\GenericoController.class

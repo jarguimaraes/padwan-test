@@ -26,7 +26,11 @@ public class JediController {
         List<JediDTO> jedis = service.findAll();
         return new ResponseEntity(jedis, HttpStatus.OK);
     }
-
+    
+    /*@GetMapping(value = "/{midichlorians}")
+    public Jedi listaJedi(@PathVarialble(value="midichlorians")) {
+                return new jediRepository.findById(midichlorians);
+    }*/
 
     @PostMapping(value = "")
     public ResponseEntity<Object> incluirJedi(@RequestBody JediDTO jediDTO) {

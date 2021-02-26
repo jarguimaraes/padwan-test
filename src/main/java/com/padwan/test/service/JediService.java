@@ -26,6 +26,9 @@ public class JediService {
         Jedi jedi = new Jedi();
         jedi.setId(jediDTO.getId());
         jedi.setNome(jediDTO.getNome());
+        jedi.setStatus(jediDTO.getStatus());
+        jedi.setMentor(jediDTO.getMentor());
+        jedi.setMidichlorians(jediDTO.getMidichlorians());        
         return new JediDTO(repository.save(jedi));
     }
 }
