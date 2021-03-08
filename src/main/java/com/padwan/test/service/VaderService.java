@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class VaderService {
 
-    public List<String> skills(){
+    public List<String> skills() {
         List<String> skills = new ArrayList<>();
         skills.add("force push");
         skills.add("force pull");
