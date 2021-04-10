@@ -6,6 +6,9 @@ public class JediDTO {
 
     private Integer id;
     private String nome;
+    private String status;
+    private String mentor;
+    private int midichlorians;
 
     public JediDTO() {
 
@@ -31,4 +34,28 @@ public class JediDTO {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMentor() {
+		return mentor;
+	}
+
+	public void setMentor(String mentor) {
+		this.mentor = mentor;
+	}
+
+	public int getMidichlorians() {
+		return midichlorians;
+	}
+
+	public void setMidichlorians(int midichlorians) {
+		this.midichlorians = midichlorians;
+	}
 }
