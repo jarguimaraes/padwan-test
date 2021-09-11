@@ -23,6 +23,14 @@ public class JediDTO {
         this.statusEnum = jedi.getStatusEnum();
     }
 
+    public JediDTO(JediDTO jediDTO) {
+        this.id = jediDTO.getId();
+        this.nome = jediDTO.getNome();
+        this.midichlorians = jediDTO.getMidichlorians();
+        this.idMentor = jediDTO.getIdMentor();
+        this.statusEnum = jediDTO.getStatusEnum();
+    }
+
     public Integer getId() {
         return id;
     }
