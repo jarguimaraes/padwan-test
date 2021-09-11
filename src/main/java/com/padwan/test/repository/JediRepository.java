@@ -11,13 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface JediRepository extends JpaRepository<Jedi, Integer> {
 
-//    @Query(value = "select AVG(s.salary) as average, MAX(s.salary) as maximum, MIN(s.salary) as minimum from employees e \n" +
-//            "\n" +
-//            "inner join salaries s on s.emp_no = e.emp_no\n" +
-//            "\n" +
-//            "where gender = ?1", nativeQuery = true)
-//    EmployeeSalaryDTO getAverageMaxAndMinSalaryByGender(String gender);
-
     @Query(value = "select mestre, aprendizes from MestreEAprendizDTO ", nativeQuery = true)
     MestreEAprendizDTO getMestre(String mestre);
 

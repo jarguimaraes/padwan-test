@@ -34,7 +34,7 @@ public class JediService {
 
     public JediDTO incluir(JediDTO jediDTO) {
         Jedi jedi = new Jedi();
-//        jedi.setId(jediDTO.getId());
+        jedi.setId(jediDTO.getId());
         jedi.setNome(jediDTO.getNome());
         jedi.setStatusEnum(jediDTO.getStatusEnum());
         jedi.setMidichlorians(jediDTO.getMidichlorians());
