@@ -5,7 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.padwan.test.enums.StatusEnum;
+
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter@Setter
 public class RelacionamentoJedi {
 
     @Id
@@ -14,27 +20,4 @@ public class RelacionamentoJedi {
     private Integer idMentor;
     private Integer idAprendiz;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getIdMentor() {
-        return idMentor;
-    }
-
-    public void setIdMentor(Integer idMentor) {
-        this.idMentor = idMentor;
-    }
-
-    public Integer getIdAprendiz() {
-        return idAprendiz;
-    }
-
-    public void setIdAprendiz(Integer idAprendiz) {
-        this.idAprendiz = idAprendiz;
-    }
 }

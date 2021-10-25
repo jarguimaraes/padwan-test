@@ -1,8 +1,12 @@
 package com.padwan.test.controller;
 
 
+import com.padwan.test.dto.CategoriaDTO;
 import com.padwan.test.dto.JediDTO;
 import com.padwan.test.dto.MestreEAprendizDTO;
+import com.padwan.test.entity.Jedi;
+import com.padwan.test.entity.RelacionamentoJedi;
+import com.padwan.test.repository.JediRepository;
 import com.padwan.test.service.JediService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +39,16 @@ public class JediController {
 
     @GetMapping(value = "/mestre-aprendiz")
     public ResponseEntity<Object> consultarMestreEAprendiz(){
-        List<MestreEAprendizDTO> mestreEAprendizDTOS = service.mestreEAprendiz();
+        List<RelacionamentoJedi> mestreEAprendizDTOS = service.mestreEAprendiz();
         return new ResponseEntity(mestreEAprendizDTOS, HttpStatus.OK);
     }
 
     @GetMapping(value = "/midichlorians-maior9000")
     public ResponseEntity<Object>consultaMidichlorians(){
-        List<JediDTO> jediDTOS = service.consultarMidichlorians();
-        return new ResponseEntity(jediDTOS, HttpStatus.OK);
+        List<JediDTO> jedi = service.consultarMidichlorians();
+        return new ResponseEntity(jedi, HttpStatus.OK);
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "/quantidade-jedis", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> consultaPorCategoria(){
