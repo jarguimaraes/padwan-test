@@ -1,6 +1,7 @@
 package com.padwan.test.repository;
 
 import com.padwan.test.entity.Jedi;
+import com.padwan.test.interfaces.Categoria;
 
 import java.util.List;
 
@@ -14,23 +15,21 @@ public interface JediRepository extends JpaRepository<Jedi, Integer> {
 	@Query(value = "SELECT * FROM jedi WHERE midichlorians > 9000" , nativeQuery = true)
 	List<Jedi> consultarMidichlorians();
 	
-	@Query(value = ""
-			+ "SELECT \r\n"
-			+ "	CASE \r\n"
-			+ "		status_enum \r\n"
+	@Query(value = "SELECT\r\n"
+			+ "	CASE\r\n"
+			+ "		status_enum\r\n"
 			+ "	WHEN 0 THEN 'PADAWAN'\r\n"
 			+ "	WHEN 1 THEN 'JEDI'\r\n"
 			+ "	ELSE 'MESTRE JEDI'\r\n"
-			+ "	END,\r\n"
+			+ "	END AS categoria,\r\n"
 			+ "	COUNT(*) AS quantidade \r\n"
-			+ "FROM \r\n"
-			+ "	jedi \r\n"
+			+ "FROM\r\n"
+			+ "	jedi\r\n"
 			+ "GROUP BY \r\n"
 			+ "	status_enum\r\n"
-			+ "ORDER BY \r\n"
-			+ "	status_enum"
-			, nativeQuery = true)
-	List consultarPorCategoria();
+			+ "ORDER BY\r\n"
+			+ "	status_enum", nativeQuery = true)
+	List<Categoria> consultarPorCategoria();
 	
 	
 }

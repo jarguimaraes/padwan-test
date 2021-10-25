@@ -75,7 +75,14 @@ public class JediService {
     
     
     public List<CategoriaDTO> consultarPorCategoria(){
-    	List<CategoriaDTO> catList = repository.consultarPorCategoria();
+    	List<CategoriaDTO> catList = repository.consultarPorCategoria().stream().map(e -> {
+    		CategoriaDTO dto = new CategoriaDTO();
+    		dto.setCategoria(e.getCategoria());
+    		dto.setQuantidade(e.getQuantidade());
+    		
+    		return dto;
+    	}).collect(Collectors.toList());
+    	
     	return catList;
     }
     
